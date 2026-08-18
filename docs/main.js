@@ -177,15 +177,8 @@ function updateOutput () {
   }
 }
 
-const redirectContainerElement = document.querySelector("#redirect-container");
-const redirectLinkElement = document.querySelector("#redirect-link");
-const loaderElement = document.querySelector("#loader");
-
 function handleRedirectPrompt (target) {
-  loaderElement.style.display = "none";
-  redirectContainerElement.style.display = "flex";
-  redirectLinkElement.textContent = target;
-  redirectLinkElement.href = target;
+  window.location.href = target;
 }
 
 inputLinkElement.addEventListener("input", () => {
@@ -226,7 +219,6 @@ inputLinkElement.addEventListener("input", () => {
 
   updateOutput();
 
-  loaderElement.style.opacity = 0;
   document.querySelector("#content").style.opacity = 1;
   document.querySelector("#content").style.pointerEvents = "auto";
   document.querySelector("header").style.opacity = 1;
