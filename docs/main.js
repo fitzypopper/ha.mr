@@ -177,8 +177,14 @@ function updateOutput () {
   }
 }
 
+const redirectContainerElement = document.querySelector("#redirect-container");
+const redirectLinkElement = document.querySelector("#redirect-link");
+
 function handleRedirectPrompt (target) {
-  window.location.href = target;
+  redirectContainerElement.style.display = "flex";
+  redirectLinkElement.textContent = target;
+  redirectLinkElement.href = target;
+  redirectLinkElement.click();
 }
 
 inputLinkElement.addEventListener("input", () => {
